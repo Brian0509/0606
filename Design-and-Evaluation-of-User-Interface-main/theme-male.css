@@ -200,3 +200,21 @@ html.male .font-ctrl button { font-size: .92rem; }
   html.male .site-search { margin-left: 0; }
   html.male .site-search input { width: 90px; }
 }
+
+/* ── 比較分頁：修正表頭 / 切換鈕文字對比（淺色背景下看不清） ── */
+html.male .th-criteria { color: var(--text) !important; font-weight: 800; }
+html.male #undoPanel { color: var(--c1); }
+html.male .score-table thead th { background: #eef1f6; }
+html.male .seg-ctrl { background: #fff; border-color: var(--border-hi); }
+html.male .seg-btn { color: #3a4256; font-weight: 700; }          /* 未選：深灰，清楚可讀 */
+html.male [data-panel="a"] .seg-btn.active {
+  background: var(--c1); color: #fff;                              /* 選中：藍底白字 */
+}
+html.male [data-panel="b"] .seg-btn.active {
+  background: var(--c2); color: #fff;                              /* 選中：紫底白字 */
+}
+html.male .score-table td span { color: var(--text); font-weight: 800; }
+html.male .score-table td:first-child small { color: #5a6275; }
+html.male .fct-header { background: #eef1f6; }
+html.male .fct-header .fct-col-label { color: var(--text); font-weight: 800; }
+html.male .fct-col-label { color: var(--text); }

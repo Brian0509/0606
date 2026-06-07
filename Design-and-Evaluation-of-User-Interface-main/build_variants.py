@@ -26,6 +26,13 @@ SEARCH_CARD = '''<div class="shortcut-card reveal">
             <h4>搜尋本頁關鍵字</h4>
             <p>於導覽列右上角的搜尋欄輸入關鍵字，頁面上所有相符文字會自動高亮；再次按下搜尋可逐一跳到下一個結果。</p>
           </div>
+        </div>
+        <div class="shortcut-card reveal">
+          <div class="shortcut-key">Shift + H</div>
+          <div class="shortcut-desc">
+            <h4>快速回到首頁</h4>
+            <p>在任一頁面按下 Shift+H，即可立即返回首頁，免去捲動或尋找首頁按鈕。</p>
+          </div>
         </div>'''
 
 STAT_BAND = {

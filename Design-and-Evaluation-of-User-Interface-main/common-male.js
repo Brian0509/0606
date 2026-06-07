@@ -101,6 +101,12 @@ document.addEventListener('keydown', e => {
   if (e.shiftKey && (e.code === 'Equal' || e.code === 'NumpadAdd') && !inInput) { e.preventDefault(); applyFontSize(fontLevelIdx + 1); }
   if (e.shiftKey && (e.code === 'Minus' || e.code === 'NumpadSubtract') && !inInput) { e.preventDefault(); applyFontSize(fontLevelIdx - 1); }
   if (e.shiftKey && e.code === 'Digit0' && !inInput) { e.preventDefault(); applyFontSize(2); }
+  // 回到首頁快捷鍵：Shift + H
+  if (e.shiftKey && (e.code === 'KeyH') && !inInput) {
+    e.preventDefault();
+    const home = document.querySelector('.nav-home-btn');
+    window.location.href = home ? home.getAttribute('href') : 'index-male.html';
+  }
 });
 
 // ── Hamburger nav ─────────────────────────

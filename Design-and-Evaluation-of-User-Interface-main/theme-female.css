@@ -154,3 +154,21 @@ html.female .fc-input button:hover { transform: scale(1.08); }
   html.female .fullchat { height: 78vh; border-radius: 18px; }
   html.female .fc-msg { max-width: 88%; }
 }
+
+/* ── 比較分頁：修正表頭 / 切換鈕文字對比（淺色背景下看不清） ── */
+html.female .th-criteria { color: var(--text) !important; font-weight: 700; }
+html.female #undoPanel { color: var(--c2); }
+html.female .score-table thead th { background: #eef1fb; }
+html.female .seg-ctrl { background: #fff; border-color: var(--border-hi); }
+html.female .seg-btn { color: #3a4060; font-weight: 600; }         /* 未選：深灰可讀 */
+html.female [data-panel="a"] .seg-btn.active {
+  background: var(--c1); color: #fff;                              /* 選中：藍底白字 */
+}
+html.female [data-panel="b"] .seg-btn.active {
+  background: var(--c2); color: #fff;                              /* 選中：紫底白字 */
+}
+html.female .score-table td span { color: var(--text); font-weight: 700; }
+html.female .score-table td:first-child small { color: #5a6182; }
+html.female .fct-header { background: #eef1fb; }
+html.female .fct-header .fct-col-label,
+html.female .fct-col-label { color: var(--text); font-weight: 700; }
