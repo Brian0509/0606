@@ -143,6 +143,11 @@ def build(page, v):
     html = (BASE / f"{page}.html").read_text(encoding="utf-8")
     html = rewrite_links(html, v); html = add_html_class(html, v)
     html = inject_theme_css(html, v); html = swap_js(html, v)
+    if page == "compare":
+        # 雷達圖文字原為深色背景設計（很淡），改為深色讓淺底也清楚
+        html = html.replace("pointLabels: { color: '#aaaacc'", "pointLabels: { color: '#1a1a1a'")
+        html = html.replace("color: '#eeeeff',", "color: '#1f2540',")   # 圖例文字
+        html = html.replace("ticks: { stepSize: 2, color: '#55556a'", "ticks: { stepSize: 2, color: '#333333'")
     if v == "male":
         html = html.replace('<div class="font-ctrl">', SEARCH_BOX, 1)
         if page == "index":

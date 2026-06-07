@@ -218,3 +218,6 @@ html.male .score-table td:first-child small { color: #5a6275; }
 html.male .fct-header { background: #eef1f6; }
 html.male .fct-header .fct-col-label { color: var(--text); font-weight: 800; }
 html.male .fct-col-label { color: var(--text); }
+
+/* ── 移除評分表標題列上方的空白帶（sticky top 造成的位移） ── */
+html.male .score-table thead th { position: static !important; top: auto !important; }
