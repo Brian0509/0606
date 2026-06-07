@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>數位教育指南：知識王 vs Kahoot!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- 頂部閱讀進度條 -->
+  <div id="progress-bar"></div>
+
+  <!-- ── 導覽列 ── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">🏠 數位教育指南</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="zhishiwang.html">🎮 知識王</a></li>
+        <li><a href="kahoot.html">🟪 Kahoot!</a></li>
+        <li><a href="compare.html">⚖️ 比較</a></li>
+        <li><a href="qa.html">💬 Q&A</a></li>
+      </ul>
+      <div class="font-ctrl">
+        <button id="fontDecrease" title="縮小字體 (Shift+−)" aria-label="縮小字體">A−</button>
+        <button id="fontReset"    title="重設字體 (Shift+0)" aria-label="重設字體">A</button>
+        <button id="fontIncrease" title="放大字體 (Shift++)" aria-label="放大字體">A+</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="選單">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="hero">
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="shape s1"></div><div class="shape s2"></div>
+      <div class="shape s3"></div><div class="shape s4"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">使用者介面設計與評鑑 · 第三次作業</p>
+      <h1 class="hero-title">數位教育指南：<br>知識王 <span class="c1">vs</span> <span class="c2">Kahoot!</span></h1>
+      <p class="hero-sub">深度解析兩款益智遊戲，幫你為孩子做出最好的選擇</p>
+      <div class="hero-badges">
+        <div class="badge badge-1">🎮 知識王 LIVE</div>
+        <div class="badge-vs">VS</div>
+        <div class="badge badge-2">🟪 Kahoot!</div>
+      </div>
+      <a href="#portal" class="hero-cta">開始探索 <span class="cta-arrow">↓</span></a>
+    </div>
+  </section>
+
+  <!-- ── 入口卡片 ── -->
+  <section id="portal" class="portal-section">
+    <div class="container" style="text-align:center;">
+      <div class="section-label">導覽</div>
+      <h2 class="section-title">選擇你要<span class="c3">查看的內容</span></h2>
+      <p class="section-desc" style="margin:0 auto 0;">點擊卡片深入了解各項目</p>
+      <div class="portal-cards">
+        <a href="zhishiwang.html" class="portal-card card-1 reveal">
+          <div class="card-icon">🎮</div>
+          <h3>《知識王 LIVE》<br>深度解析</h3>
+          <p>台灣本土益智競技平台，70 萬次下載，即時對戰體驗全面介紹</p>
+          <span class="card-arrow">查看詳情 →</span>
+        </a>
+        <a href="kahoot.html" class="portal-card card-2 reveal">
+          <div class="card-icon">🟪</div>
+          <h3>《Kahoot!》<br>深度解析</h3>
+          <p>全球 3 億用戶的遊戲化學習平台，課堂互動測驗首選</p>
+          <span class="card-arrow">查看詳情 →</span>
+        </a>
+        <a href="compare.html" class="portal-card card-3 reveal">
+          <div class="card-icon">⚖️</div>
+          <h3>產品綜合比較<br>與篩選</h3>
+          <p>七大維度全面比較，互動式篩選器幫你找出最適合的選擇</p>
+          <span class="card-arrow">查看比較 →</span>
+        </a>
+        <a href="qa.html" class="portal-card card-4 reveal">
+          <div class="card-icon">💬</div>
+          <h3>問題<br>諮詢</h3>
+          <p>查看常見問題解答，或直接留言提問，我們為你解惑</p>
+          <span class="card-arrow">前往諮詢 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 快捷功能指南 ── -->
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="section-label">指南</div>
+      <h2 class="section-title">⌨️ 網站操作與<span class="c3">快捷功能指南</span></h2>
+      <p class="section-desc">善用這些操作讓瀏覽更流暢</p>
+      <div class="shortcut-grid">
+        <div class="shortcut-card reveal">
+          <div class="shortcut-key">Shift + D</div>
+          <div class="shortcut-desc">
+            <h4>切換深色 / 淺色主題</h4>
+            <p>點擊右上角 🌙 按鈕，或按 Shift+D 快速切換，偏好會自動儲存。</p>
+          </div>
+        </div>
+        <div class="shortcut-card reveal">
+          <div class="shortcut-key">Shift + +/−</div>
+          <div class="shortcut-desc">
+            <h4>調整字體大小</h4>
+            <p>按 Shift+= 放大字體、Shift+− 縮小字體、Shift+0 重設回預設大小，偏好自動儲存。</p>
+          </div>
+        </div>
+        <div class="shortcut-card reveal">
+          <div class="shortcut-key">Ctrl + Z</div>
+          <div class="shortcut-desc">
+            <h4>退回比較欄選擇</h4>
+            <p>在比較分析區切換欄位後，可按 Ctrl+Z（Mac：⌘Z）退回上一步。</p>
+          </div>
+        </div>
+        <div class="shortcut-card reveal">
+          <div class="shortcut-key">點擊 Tab</div>
+          <div class="shortcut-desc">
+            <h4>切換遊戲介紹內容</h4>
+            <p>每款遊戲介紹區的頁籤（遊戲介紹、玩法介紹、遊戲模式）可自由點擊切換。</p>
+          </div>
+        </div>
+        <div class="shortcut-card reveal">
+          <div class="shortcut-key">點擊 FAQ</div>
+          <div class="shortcut-desc">
+            <h4>展開常見問題</h4>
+            <p>點擊任一問題即可展開詳細說明，再點一次或點其他問題即可收合。</p>
+          </div>
+        </div>
+        <div class="shortcut-card reveal">
+          <div class="shortcut-key">↑ 右下角</div>
+          <div class="shortcut-desc">
+            <h4>快速回到頂部</h4>
+            <p>向下捲動後，右下角會出現 ↑ 按鈕，點擊即可滑回頁面頂端。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <p>使用者介面設計與評鑑 · 第三次作業</p>
+      <p class="footer-sub">分析對象：知識王 LIVE · Kahoot!</p>
+    </div>
+  </footer>
+
+  <!-- 返回頂部 -->
+  <button id="backTop" aria-label="返回頂部">↑</button>
+
+  <div id="toastContainer"></div>
+  <script src="common.js"></script>
+</body>
+</html>

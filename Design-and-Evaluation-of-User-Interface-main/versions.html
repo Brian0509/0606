@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>版本切換 · 男女生版本展示</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #0d0d1f;
+      color: #eee;
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 48px 24px;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; margin-bottom: 8px; text-align: center; }
+    .sub { text-align: center; color: #9999bb; margin-bottom: 48px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .card {
+      border-radius: 20px; padding: 32px 28px; text-decoration: none; color: #fff;
+      border: 1px solid rgba(255,255,255,0.1); transition: transform .3s, box-shadow .3s;
+      display: flex; flex-direction: column; min-height: 280px;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.5); }
+    .card-orig { background: linear-gradient(150deg, #1a2a4a, #20223a); }
+    .card-male { background: linear-gradient(150deg, #15336b, #3a1c6e); border-color: #4a7adf; }
+    .card-female { background: linear-gradient(150deg, #8a4a66, #6a5a9c); border-color: #c97b9b; }
+    .tag { font-size: .75rem; font-weight: 700; letter-spacing: .1em; opacity: .8; text-transform: uppercase; margin-bottom: 12px; }
+    .card h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 12px; }
+    .card p { font-size: .9rem; color: rgba(255,255,255,0.82); flex: 1; }
+    .features { list-style: none; margin: 16px 0; font-size: .82rem; }
+    .features li { padding: 3px 0; color: rgba(255,255,255,0.9); }
+    .features li::before { content: '› '; opacity: .6; }
+    .enter { margin-top: auto; font-weight: 700; font-size: .95rem; }
+    .note { margin-top: 48px; text-align: center; font-size: .82rem; color: #777799; }
+    .pages { margin-top: 40px; background: rgba(255,255,255,0.04); border-radius: 16px; padding: 24px 28px; }
+    .pages h3 { font-size: 1rem; margin-bottom: 14px; }
+    .page-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+    .page-row .lbl { width: 80px; font-size: .85rem; color: #9999bb; flex-shrink: 0; }
+    .page-row a {
+      font-size: .8rem; padding: 4px 12px; border-radius: 16px; text-decoration: none;
+      background: rgba(255,255,255,0.08); color: #ccd; border: 1px solid rgba(255,255,255,0.12);
+      transition: background .25s;
+    }
+    .page-row a:hover { background: rgba(255,255,255,0.18); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>數位遊戲簡介 · 三版本展示</h1>
+    <p class="sub">使用者介面設計與評鑑 · 訪談任務二｜Group 1：張心洧・林彥銓・張宇睿</p>
+
+    <div class="grid">
+      <a class="card card-orig" href="index.html">
+        <span class="tag">Original</span>
+        <h2>原始版本</h2>
+        <p>第一版的遊戲簡介，作為男女版本調整的共同基礎。</p>
+        <ul class="features">
+          <li>藍紫多彩配色</li>
+          <li>頂部漸層進度條</li>
+          <li>完整快捷鍵指南</li>
+        </ul>
+        <span class="enter">開啟原版 →</span>
+      </a>
+
+      <a class="card card-male" href="index-male.html">
+        <span class="tag">♂ Male</span>
+        <h2>男生版本</h2>
+        <p>功能 / 數據導向：強化可點擊性、明確化進度條、放大字體級距。</p>
+        <ul class="features">
+          <li>進度條＝閱讀進度＋百分比</li>
+          <li>可點擊卡片標示「👆可點擊」</li>
+          <li>移除非按鈕的浮起特效</li>
+          <li>顏色作為分類工具（藍/紫加深）</li>
+          <li>字體縮放 −20%～+50%</li>
+        </ul>
+        <span class="enter">開啟男生版 →</span>
+      </a>
+
+      <a class="card card-female" href="index-female.html">
+        <span class="tag">♀ Female</span>
+        <h2>女生版本</h2>
+        <p>美觀 / 簡潔導向：和諧配色、留白簡化、真人客服入口。</p>
+        <ul class="features">
+          <li>低彩度粉紫和諧配色</li>
+          <li>浮動「真人客服」對話入口</li>
+          <li>移除快捷鍵區塊（女性會略過）</li>
+          <li>加大留白、圓潤柔化卡片</li>
+          <li>降低資訊擁擠感</li>
+        </ul>
+        <span class="enter">開啟女生版 →</span>
+      </a>
+    </div>
+
+    <div class="pages">
+      <h3>各分頁直接連結</h3>
+      <div class="page-row"><span class="lbl">首頁</span>
+        <a href="index.html">原版</a><a href="index-male.html">男</a><a href="index-female.html">女</a></div>
+      <div class="page-row"><span class="lbl">知識王</span>
+        <a href="zhishiwang.html">原版</a><a href="zhishiwang-male.html">男</a><a href="zhishiwang-female.html">女</a></div>
+      <div class="page-row"><span class="lbl">Kahoot!</span>
+        <a href="kahoot.html">原版</a><a href="kahoot-male.html">男</a><a href="kahoot-female.html">女</a></div>
+      <div class="page-row"><span class="lbl">比較</span>
+        <a href="compare.html">原版</a><a href="compare-male.html">男</a><a href="compare-female.html">女</a></div>
+      <div class="page-row"><span class="lbl">Q&amp;A</span>
+        <a href="qa.html">原版</a><a href="qa-male.html">男</a><a href="qa-female.html">女</a></div>
+    </div>
+
+    <p class="note">提示：以本機開啟時，部分瀏覽器對 file:// 的字體載入較慢屬正常。建議用本機伺服器（如 VS Code Live Server）或部署到 GitHub Pages 後展示。</p>
+  </div>
+</body>
+</html>

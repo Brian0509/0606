@@ -1,0 +1,202 @@
+/* ════════════════════════════════════════════════════════════
+   theme-male.css  ——  男生版本主題（功能 / 數據導向）v2
+   疊加在 style.css 之上，僅作用於 <html class="... male">。
+   調整重點：
+   ① 移除所有「非按鈕」元件的滑鼠 hover 特效（避免誤認為按鈕）。
+   ② 不再顯示「可點擊」標記。
+   ③ 進度條維持明確的「閱讀進度＋百分比」。
+   ④ 減少漸層色使用，改用單色，配色更乾淨好辨識。
+   ⑤ 知識王 / Kahoot 介紹文案放大，並加入大數據標語帶。
+   ⑥ 比較分頁「遊戲特性比較表」改用 紅 / 黃 / 綠 直觀標示好壞。
+   ⑦ 導覽列新增站內搜尋欄樣式。
+   ⑧ 字體縮放範圍擴大（於 common-male.js）。
+════════════════════════════════════════════════════════════ */
+
+/* ── ③ 進度條：清楚標示為捲動進度，而非載入中 ───────────── */
+html.male #progress-bar {
+  height: 6px;
+  background: var(--c1);                 /* 單色，不用漸層 */
+  border-radius: 0 3px 3px 0;
+}
+html.male body::before {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 6px; background: rgba(0,0,0,0.10); z-index: 9998;
+}
+html.male #progress-label {
+  position: fixed;
+  top: calc(var(--nav-h) + 10px); right: 16px;
+  z-index: 9999;
+  font-size: .72rem; font-weight: 700; letter-spacing: .03em;
+  color: var(--c1);
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--c1);
+  border-radius: 20px; padding: 3px 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  display: flex; align-items: center; gap: 6px;
+  pointer-events: none;
+  transition: opacity .3s, color .3s, border-color .3s;
+}
+html.male #progress-label .pl-icon { font-size: .65rem; }
+html.male #progress-label b { color: var(--c1); }
+html.male #progress-label.done { color: #1a8f3c; border-color: #1a8f3c; }
+html.male #progress-label.done b { color: #1a8f3c; }
+
+/* ── ① 全面移除「非按鈕」元件的 hover 特效 ─────────────────
+      下列皆為純資訊展示用的 <div>，不可點擊。
+      取消位移 / 投影 / 邊框變化，並改回一般游標。              */
+html.male .info-card,
+html.male .step,
+html.male .mode-card,
+html.male .note-card,
+html.male .badge,
+html.male .h-card,
+html.male .rule-card,
+html.male .shortcut-card,
+html.male .journey-step,
+html.male .modal-point { cursor: default; }
+
+html.male .info-card:hover,
+html.male .step:hover,
+html.male .mode-card:hover,
+html.male .note-card:hover,
+html.male .badge:hover,
+html.male .h-card:hover,
+html.male .rule-card:hover,
+html.male .shortcut-card:hover,
+html.male .journey-step:hover,
+html.male .modal-point:hover,
+html.male .fct-row:hover,
+html.male .score-table tbody tr:hover td {
+  transform: none !important;
+  box-shadow: none !important;
+  background: inherit;
+}
+/* h-card / rule-card 原本 hover 會有底色與展開動畫，一併關閉 */
+html.male .h-card:hover::before,
+html.male .h-card:hover::after,
+html.male .rule-card:hover::after { display: none !important; }
+html.male .fct-row:hover { background: transparent !important; }
+
+/* ② 不顯示「可點擊」標記（移除舊版的角標） */
+html.male .portal-card::before,
+html.male .recirc-card::before { content: none !important; display: none !important; }
+/* 真正可點擊的連結卡片，保留單純的浮起回饋（這些是 <a>，本來就可點） */
+html.male .portal-card:hover,
+html.male .recirc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  border-color: var(--c1);
+}
+
+/* ── ④ 減少漸層：改用單色，乾淨好辨識 ─────────────────────── */
+html.male {
+  --c1: #1565d8;   /* 知識王藍：加深、辨識度高 */
+  --c2: #7b2fe0;   /* Kahoot 紫 */
+}
+html.male .nav-logo {
+  background: none !important;
+  -webkit-text-fill-color: var(--c1);
+  color: var(--c1);
+}
+html.male .hero-cta,
+html.male .btn-submit,
+html.male .btn-home {
+  background: var(--c1) !important;
+  box-shadow: 0 4px 16px rgba(21,101,216,0.30);
+}
+html.male .hero-cta:hover,
+html.male .btn-submit:hover { box-shadow: 0 6px 22px rgba(21,101,216,0.42); }
+html.male .tab.active,
+html.male .filter-btn-h.active,
+html.male .seg-btn.active {
+  background: var(--c1) !important;
+  box-shadow: none;
+}
+html.male .hero-title {
+  background: none !important;
+  -webkit-text-fill-color: var(--text);
+  color: var(--text);
+}
+html.male .hero-title .c1 { color: var(--c1); -webkit-text-fill-color: var(--c1); }
+html.male .hero-title .c2 { color: var(--c2); -webkit-text-fill-color: var(--c2); }
+html.male .step-num { background: var(--c1) !important; }   /* 取消漸層號碼底 */
+
+/* ── ⑤ 知識王 / Kahoot 介紹文案放大 + 大數據標語帶 ───────── */
+html.male .page-hero-title { font-size: clamp(2.4rem, 6vw, 4rem); }
+html.male .page-hero-sub {
+  font-size: 1.28rem;
+  line-height: 1.75;
+  color: var(--text);
+  max-width: 760px;
+  font-weight: 500;
+}
+/* 大數據標語帶（由 build 注入於兩個遊戲頁，模板一致） */
+html.male .stat-band {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+html.male .stat-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--c1);
+  border-radius: var(--r);
+  padding: 20px 22px;
+}
+html.male .stat-box.alt { border-left-color: var(--c2); }
+html.male .stat-num {
+  font-size: 2.1rem; font-weight: 900; line-height: 1.1;
+  color: var(--c1); letter-spacing: -.02em;
+}
+html.male .stat-box.alt .stat-num { color: var(--c2); }
+html.male .stat-label { font-size: .9rem; color: var(--muted); margin-top: 4px; font-weight: 500; }
+
+/* ── ⑥ 遊戲特性比較表：紅 / 黃 / 綠 直觀好壞 ───────────────── */
+html.male .fct-badge.badge-pos  { background:#e3f6e8; color:#1a8f3c; border:1px solid #1a8f3c; }  /* 好＝綠 */
+html.male .fct-badge.badge-mid  { background:#fff6da; color:#a87a00; border:1px solid #d9a400; }  /* 普通＝黃 */
+html.male .fct-badge.badge-neg  { background:#fde6e6; color:#c81e1e; border:1px solid #c81e1e; }  /* 差＝紅 */
+html.male .fct-badge.badge-info { background:#eef0f4; color:#4a5568; border:1px solid #9aa3b2; }  /* 中性資訊＝灰 */
+html.male .fct-badge { font-weight: 800; }
+
+/* ── ⑦ 導覽列站內搜尋欄（由 build 注入） ──────────────────── */
+html.male .site-search {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 4px 6px 4px 12px;
+  margin-left: 12px;
+}
+html.male .site-search input {
+  border: none; outline: none; background: none;
+  font-family: inherit; font-size: .85rem; color: var(--text);
+  width: 130px;
+}
+html.male .site-search input::placeholder { color: var(--muted); }
+html.male .site-search button {
+  background: var(--c1); color: #fff;
+  width: 28px; height: 28px; border-radius: 50%;
+  font-size: .85rem; flex-shrink: 0;
+}
+html.male .site-search .search-count {
+  font-size: .72rem; color: var(--muted); min-width: 36px; text-align: center;
+}
+/* 搜尋命中高亮 */
+html.male mark.search-hit { background: #ffe066; color: #1a1a1a; border-radius: 3px; padding: 0 2px; }
+html.male mark.search-hit.current { background: #ff9f1c; color: #fff; }
+
+/* ── ⑧ 快捷鍵 / 字體控制 ──────────────────────────────────── */
+html.male .shortcut-card { border-left: 4px solid var(--c1); }
+html.male .shortcut-key {
+  background: rgba(21,101,216,0.12); border-color: var(--c1);
+  color: #1256a8; font-weight: 800;
+}
+html.male .font-ctrl button { font-size: .92rem; }
+
+/* 視窗較窄時，搜尋欄縮短 */
+@media (max-width: 980px) {
+  html.male .site-search { margin-left: 0; }
+  html.male .site-search input { width: 90px; }
+}

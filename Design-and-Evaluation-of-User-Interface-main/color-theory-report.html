@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <title>色彩應用理論對照</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      padding: 48px 56px;
+      max-width: 820px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    h1 { font-size: 18pt; margin-bottom: 4px; }
+    h2 { font-size: 12pt; margin: 28px 0 8px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+    p.meta { font-size: 10pt; color: #444; margin-bottom: 32px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 8px;
+      font-size: 10.5pt;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #eee;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    td:first-child { width: 28%; font-weight: 700; }
+
+    @media print {
+      body { padding: 20px 28px; }
+      h2 { break-before: auto; }
+      table { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>色彩應用理論對照</h1>
+<p class="meta">使用者介面設計與評鑑 · 第三次作業　｜　分析對象：知識王 LIVE vs Kahoot!</p>
+
+<h2>Purposes（目的）</h2>
+<table>
+  <tr><th>目的</th><th>本設計中的應用</th></tr>
+  <tr>
+    <td>To draw attention</td>
+    <td>Hero 區背景以藍、紫、橘色光暈漂浮，吸引視線聚焦至中央標題；頁面頂部進度條使用三色漸層，強調閱讀進度。</td>
+  </tr>
+  <tr>
+    <td>To establish relationships</td>
+    <td>藍色（#2196f3）全站代表《知識王 LIVE》，紫色（#9c4dff）全站代表《Kahoot!》，兩色在比較表格、雷達圖、標題標籤中保持一致，使用者無需閱讀文字即可辨認。</td>
+  </tr>
+  <tr>
+    <td>To indicate status</td>
+    <td>12 項特性比較表使用三種顏色：青綠（正面）、琥珀（中性）、紅色（負面），直觀傳達各項目評價狀態，並搭配 ✓/✗ 符號輔助色盲使用者識別。</td>
+  </tr>
+  <tr>
+    <td>To increase user satisfaction</td>
+    <td>深色主題搭配高彩度強調色、卡片懸停發光效果、平滑動畫過渡，提升視覺質感與互動愉悅感。</td>
+  </tr>
+</table>
+
+<h2>Procedures（設計程序）</h2>
+<table>
+  <tr><th>步驟</th><th>本設計中的應用</th></tr>
+  <tr>
+    <td>Complete in black &amp; white first</td>
+    <td>所有版面以深色背景（#07071a）搭配近白文字（#eeeeff）為基礎，確保黑白狀態下內容已清晰可讀，再疊加彩色層。</td>
+  </tr>
+  <tr>
+    <td>Distinguish most important objects</td>
+    <td>主標題使用最大字級並套用品牌色漸層；次要資訊（副標題、說明文字）使用低飽和度的灰色（#8888aa），形成明確的視覺層級。</td>
+  </tr>
+  <tr>
+    <td>Add bright colour for important objects</td>
+    <td>高彩度色僅用於最重要的識別元素：品牌色標籤、比較狀態徽章、進度條、懸停發光邊框。大面積背景保持暗色。</td>
+  </tr>
+  <tr>
+    <td>Consider whether colours look nice</td>
+    <td>深色／淺色模式皆有獨立色彩調校，確保在兩種情境下視覺皆清晰美觀。</td>
+  </tr>
+</table>
+
+<h2>Combinations（組合規則）</h2>
+<table>
+  <tr><th>規則</th><th>本設計中的應用</th></tr>
+  <tr>
+    <td>Not too many colours in one screen</td>
+    <td>全站主色限定為藍、紫兩個品牌色，加上青綠一個輔助強調色；比較徽章僅三種狀態色。頁面同時出現的顏色不超過五種。</td>
+  </tr>
+  <tr>
+    <td>High contrast between text and background</td>
+    <td>深色模式：#eeeeff 文字 on #07071a 背景，對比比約 15:1；淺色模式：#12122a 文字 on #f2f2f9 背景，對比比約 13:1，均遠超 WCAG AA 標準（4.5:1）。</td>
+  </tr>
+  <tr>
+    <td>Avoid red+green / blue+yellow（色盲）</td>
+    <td>初版正面徽章為綠色（#48c78e），與負面徽章紅色並列，構成紅+綠組合，違反此規則。修正後將正面徽章改為青綠色，消除紅+綠組合，並保留 ✓/✗ 符號作為非色彩識別的輔助。</td>
+  </tr>
+  <tr>
+    <td>Avoid adjacent colours for text/background</td>
+    <td>文字與背景均不使用色輪相鄰色配對。藍色（c1）與青綠（c3）雖為相鄰色，但兩者皆僅作為小元素強調色，而非文字與底色的搭配關係。</td>
+  </tr>
+</table>
+
+<h2>Tips（配色技巧）</h2>
+<table>
+  <tr><th>技巧</th><th>本設計中的應用</th></tr>
+  <tr>
+    <td>Avoid two dark colours together</td>
+    <td>Hero 背景光暈原使用珊瑚紅（#ff6b6b）與藍色並存，違反兩深色並用原則。修正後改為橘色（#ff9800），以橘+藍取代紅+藍。</td>
+  </tr>
+  <tr>
+    <td>Far side dark / near side light</td>
+    <td>頁面背景（最遠層）使用最深的 #07071a；卡片（中層）稍亮；文字與徽章（最近層）最亮，符合遠暗近亮的空間層次感。</td>
+  </tr>
+  <tr>
+    <td>Mild colours for big size; Bright for small</td>
+    <td>大面積元素（背景、區塊底色）使用低飽和暗色；高彩度亮色（徽章、標籤、懸停邊框）僅用於小面積重點元素。</td>
+  </tr>
+  <tr>
+    <td>Monochromatic with Light and Dark</td>
+    <td>提供深色／淺色模式切換，兩套配色採用相同色相的深淺變化（深藍灰系 ↔ 淺藍灰系），體現單色配色原則，偏好自動儲存。</td>
+  </tr>
+</table>
+
+</body>
+</html>

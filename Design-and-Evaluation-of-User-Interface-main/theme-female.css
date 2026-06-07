@@ -1,0 +1,156 @@
+/* ════════════════════════════════════════════════════════════
+   theme-female.css  ——  女生版本主題（美觀 / 簡潔導向）v2
+   疊加在 style.css 之上，僅作用於 <html class="... female">。
+   調整重點：
+   ① 配色維持原本的「藍 / 紫」（不再使用粉紫）。
+   ② 保留女版的留白、圓潤、柔和質感（強調整體和諧、好讀）。
+   ③ 同樣移除非按鈕的浮起特效，維持乾淨。
+   ④ 知識王 / Kahoot 介紹著重遊戲本身（大數據標語已於文案移除）。
+   ⑤ 真人客服改為「Q&A 整頁聊天介面」，故不再注入浮動客服按鈕；
+      此處提供整頁聊天介面的樣式。
+════════════════════════════════════════════════════════════ */
+
+/* ── ① 配色：沿用原本藍 / 紫，僅微調為較柔和的淺色基底 ───── */
+html.female.light {
+  --c1: #2196f3;   /* 知識王藍（原色） */
+  --c2: #9c4dff;   /* Kahoot 紫（原色） */
+  --c3: #00b3a8;   /* 青綠 */
+  --c4: #ff9800;   /* 橘 */
+  --bg:      #f5f7fb;   /* 柔和淺藍灰底 */
+  --bg2:     #ffffff;
+  --bg-card: #ffffff;
+  --bg-hover: rgba(0,0,0,0.04);
+  --border:    rgba(40,60,120,0.12);
+  --border-hi: rgba(40,60,120,0.26);
+  --text:  #1f2540;
+  --muted: #5a6182;
+  --subtle: #9aa0bd;
+  --r: 20px;            /* 更圓潤 */
+  --r-sm: 12px;
+}
+
+/* Hero 漸層：柔和的藍紫調 */
+html.female #hero {
+  background: linear-gradient(160deg, #e7f0ff 0%, #efe9ff 100%) !important;
+}
+html.female .page-hero {
+  background: linear-gradient(160deg, #e7f0ff 0%, #f0ecff 100%);
+}
+/* hero-title 沿用淺色主題的漸層公式（自動套用藍紫，且可讀） */
+
+/* ── ② 留白與柔化：降低擁擠、提升和諧 ──────────────────── */
+html.female .section { padding: 116px 0; }
+html.female body { line-height: 1.85; }
+html.female .info-grid,
+html.female .modes-grid { gap: 28px; }
+html.female .info-card,
+html.female .mode-card,
+html.female .step,
+html.female .note-card,
+html.female .portal-card,
+html.female .recirc-card {
+  border-radius: var(--r);
+  box-shadow: 0 4px 20px rgba(40,60,120,0.08);
+  border-color: var(--border);
+}
+html.female .info-card { padding: 28px; }
+html.female .section-desc { color: var(--muted); }
+
+/* ── ③ 移除非按鈕的浮起特效，維持乾淨 ─────────────────────── */
+html.female .info-card,
+html.female .step,
+html.female .mode-card,
+html.female .note-card,
+html.female .badge,
+html.female .journey-step { cursor: default; }
+html.female .info-card:hover,
+html.female .step:hover,
+html.female .mode-card:hover,
+html.female .note-card:hover,
+html.female .badge:hover,
+html.female .journey-step:hover {
+  transform: none !important;
+  box-shadow: 0 4px 20px rgba(40,60,120,0.08) !important;
+  border-color: var(--border-hi);
+}
+/* 可點擊的連結卡片：保留柔和浮起作為唯一互動回饋 */
+html.female .portal-card:hover,
+html.female .recirc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(156,77,255,0.20);
+  border-color: var(--c2);
+}
+
+/* ── 隱藏快捷鍵相關元素（女性會略過） ─────────────────────── */
+html.female .shortcut-grid,
+html.female .shortcut-card { display: none !important; }
+
+/* ════════════════════════════════════════════════════════════
+   ⑤ Q&A 整頁真人客服介面（女版專屬，取代原 FAQ + 表單）
+════════════════════════════════════════════════════════════ */
+html.female .fullchat-section { padding: 0 0 80px; }
+html.female .fullchat-wrap {
+  max-width: 860px; margin: 0 auto; padding: 0 24px;
+}
+html.female .fullchat {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 16px 50px rgba(40,60,120,0.14);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  height: min(72vh, 680px);
+}
+html.female .fc-head {
+  display: flex; align-items: center; gap: 14px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+  color: #fff;
+}
+html.female .fc-avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: rgba(255,255,255,0.22);
+  display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+  flex-shrink: 0;
+}
+html.female .fc-head strong { display: block; font-size: 1.15rem; }
+html.female .fc-status { font-size: .85rem; opacity: .92; }
+html.female .fc-body {
+  flex: 1; overflow-y: auto;
+  padding: 24px; display: flex; flex-direction: column; gap: 14px;
+  background: #f7f9fd;
+}
+html.female .fc-msg {
+  max-width: 78%; padding: 13px 18px; border-radius: 18px;
+  font-size: .96rem; line-height: 1.7;
+}
+html.female .fc-msg-bot  { align-self: flex-start; background: #fff; border: 1px solid var(--border); color: var(--text); border-bottom-left-radius: 5px; }
+html.female .fc-msg-user { align-self: flex-end; background: linear-gradient(135deg, var(--c1), var(--c2)); color: #fff; border-bottom-right-radius: 5px; }
+html.female .fc-quick { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+html.female .fc-chip {
+  font-size: .9rem; padding: 9px 16px; border-radius: 22px;
+  border: 1px solid var(--c2); color: var(--c2); background: rgba(156,77,255,0.07);
+  transition: background .25s, color .25s;
+}
+html.female .fc-chip:hover { background: var(--c2); color: #fff; }
+html.female .fc-input {
+  display: flex; gap: 12px; padding: 18px 20px;
+  border-top: 1px solid var(--border); background: #fff;
+}
+html.female .fc-input input {
+  flex: 1; padding: 14px 20px; border-radius: 26px;
+  border: 1px solid var(--border); font-family: inherit; font-size: .96rem;
+  color: var(--text); outline: none; transition: border-color .25s;
+}
+html.female .fc-input input:focus { border-color: var(--c2); }
+html.female .fc-input button {
+  width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--c1), var(--c2)); color: #fff; font-size: 1.2rem;
+  transition: transform .2s;
+}
+html.female .fc-input button:hover { transform: scale(1.08); }
+
+@media (max-width: 760px) {
+  html.female .fullchat { height: 78vh; border-radius: 18px; }
+  html.female .fc-msg { max-width: 88%; }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="light female">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>問題諮詢 — 數位教育指南</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-female.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-home-btn" href="index-female.html">🏠 首頁</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="zhishiwang-female.html">🎮 知識王</a></li>
+        <li><a href="kahoot-female.html">🟪 Kahoot!</a></li>
+        <li><a href="compare-female.html">⚖️ 比較</a></li>
+        <li><a href="qa-female.html" class="active">💬 Q&A</a></li>
+      </ul>
+      <div class="font-ctrl">
+        <button id="fontDecrease" title="縮小字體 (Shift+−)" aria-label="縮小字體">A−</button>
+        <button id="fontReset"    title="重設字體 (Shift+0)" aria-label="重設字體">A</button>
+        <button id="fontIncrease" title="放大字體 (Shift++)" aria-label="放大字體">A+</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="選單">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="index-female.html" class="breadcrumb">← 返回主頁</a>
+      <div class="section-label">諮詢</div>
+      <h1 class="page-hero-title">💬 問題<span class="c4">諮詢</span></h1>
+      <p class="page-hero-sub">有任何關於兩款遊戲的問題？直接與真人客服對話，我們即時為您一對一解答</p>
+    </div>
+  </section>
+
+  <!-- 整頁真人客服 -->
+  <section class="fullchat-section">
+    <div class="fullchat-wrap">
+      <div class="fullchat">
+        <div class="fc-head">
+          <div class="fc-avatar">🙋‍♀️</div>
+          <div>
+            <strong>真人客服 · 小知</strong>
+            <span class="fc-status">● 線上服務中　|　平均回覆時間 1 分鐘</span>
+          </div>
+        </div>
+        <div class="fc-body" id="fcBody">
+          <div class="fc-msg fc-msg-bot">您好！我是真人客服小知 😊 關於《知識王 LIVE》與《Kahoot!》的任何問題，都可以直接問我，由真人為您一對一解答。</div>
+          <div class="fc-quick">
+            <button class="fc-chip">想了解兩款遊戲的差異</button>
+            <button class="fc-chip">課堂使用建議</button>
+            <button class="fc-chip">付費方案問題</button>
+            <button class="fc-chip">如何開始遊玩</button>
+          </div>
+        </div>
+        <form class="fc-input" id="fcForm">
+          <input type="text" id="fcText" placeholder="輸入訊息，真人客服將為您回覆…" autocomplete="off" />
+          <button type="submit" aria-label="送出">➤</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>使用者介面設計與評鑑 · 第三次作業</p>
+      <p class="footer-sub">分析對象：知識王 LIVE · Kahoot!</p>
+    </div>
+  </footer>
+
+  <!-- 返回頂部 -->
+  <button id="backTop" aria-label="返回頂部">↑</button>
+
+  <div id="toastContainer"></div>
+  <script src="common-female.js"></script>
+  <script>
+    'use strict';
+    (function () {
+      const body = document.getElementById('fcBody');
+      const form = document.getElementById('fcForm');
+      const input = document.getElementById('fcText');
+      function add(text, who) {
+        const m = document.createElement('div');
+        m.className = 'fc-msg ' + (who === 'user' ? 'fc-msg-user' : 'fc-msg-bot');
+        m.textContent = text;
+        body.appendChild(m);
+        body.scrollTop = body.scrollHeight;
+      }
+      function userSay(text) {
+        add(text, 'user');
+        setTimeout(() => add('收到您的問題！真人客服將盡快為您個人化回覆 🙏（此為展示用對話）', 'bot'), 700);
+      }
+      document.querySelectorAll('.fc-chip').forEach(c =>
+        c.addEventListener('click', () => userSay(c.textContent)));
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const v = input.value.trim();
+        if (!v) return;
+        userSay(v);
+        input.value = '';
+      });
+    })();
+  </script>
+<div style="position:fixed;left:12px;bottom:12px;z-index:1500;font-size:.72rem;font-weight:700;color:#fff;background:linear-gradient(90deg,#2196f3,#9c4dff);padding:6px 14px;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.25);">♀ 女生版（美觀 / 簡潔導向）</div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="light male">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《Kahoot!》深度解析 — 數位教育指南</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-male.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-home-btn" href="index-male.html">🏠 首頁</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="zhishiwang-male.html">🎮 知識王</a></li>
+        <li><a href="kahoot-male.html" class="active">🟪 Kahoot!</a></li>
+        <li><a href="compare-male.html">⚖️ 比較</a></li>
+        <li><a href="qa-male.html">💬 Q&A</a></li>
+      </ul>
+      <form class="site-search" id="siteSearchForm" role="search">
+        <input id="siteSearchInput" type="search" placeholder="搜尋本頁關鍵字…" aria-label="站內搜尋" />
+        <span class="search-count" id="siteSearchCount"></span>
+        <button type="submit" aria-label="搜尋">🔍</button>
+      </form>
+      <div class="font-ctrl">
+        <button id="fontDecrease" title="縮小字體 (Shift+−)" aria-label="縮小字體">A−</button>
+        <button id="fontReset"    title="重設字體 (Shift+0)" aria-label="重設字體">A</button>
+        <button id="fontIncrease" title="放大字體 (Shift++)" aria-label="放大字體">A+</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="選單">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="index-male.html" class="breadcrumb">← 返回主頁</a>
+      <div class="section-label label-2">Game 02</div>
+      <h1 class="page-hero-title">🟪 <span class="c2">Kahoot!</span></h1>
+      <p class="page-hero-sub">全球最受歡迎的遊戲化學習平台，2013 年創立於挪威，全球超過 3 億用戶</p>
+      <div class="stat-band">
+        <div class="stat-box alt"><div class="stat-num">3億+</div><div class="stat-label">全球註冊用戶</div></div>
+        <div class="stat-box"><div class="stat-num">200+</div><div class="stat-label">支援國家地區</div></div>
+        <div class="stat-box alt"><div class="stat-num">2013</div><div class="stat-label">創立於挪威</div></div>
+        <div class="stat-box"><div class="stat-num">90M+</div><div class="stat-label">每月活躍課堂</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- 基本介紹 -->
+      <div class="content-block reveal">
+        <h2 class="block-title"><span class="block-icon">🏢</span>基本介紹</h2>
+        <div class="info-grid">
+          <div class="info-card"><div class="info-icon">🏢</div><h3>開發商</h3><p>Kahoot! AS（挪威，2013 年創立）</p></div>
+          <div class="info-card"><div class="info-icon">💻</div><h3>平台</h3><p>Web · iOS · Android（跨平台優先設計）</p></div>
+          <div class="info-card"><div class="info-icon">🎓</div><h3>目標族群</h3><p>學生、教師、企業培訓、聚會活動</p></div>
+          <div class="info-card"><div class="info-icon">💰</div><h3>商業模式</h3><p>免費基本版，進階功能採訂閱制 Premium</p></div>
+          <div class="info-card"><div class="info-icon">🌍</div><h3>用戶規模</h3><p>全球超過 3 億用戶，覆蓋 200+ 個國家</p></div>
+          <div class="info-card"><div class="info-icon">🌐</div><h3>語言</h3><p>多語言支援，含繁體中文、英文等</p></div>
+        </div>
+      </div>
+
+      <!-- 玩法特色 -->
+      <div class="content-block">
+        <h2 class="block-title"><span class="block-icon">⚡</span>玩法特色</h2>
+        <div class="steps-list">
+          <div class="step reveal">
+            <div class="step-num c2-bg">01</div>
+            <div class="step-body">
+              <h3>🎮 主持人出題</h3>
+              <p>主持人在大螢幕顯示題目，參與者使用手機輸入 Game PIN 加入，無需帳號即可參與，入門門檻極低，適合課堂即時使用。</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-num c2-bg">02</div>
+            <div class="step-body">
+              <h3>⏱️ 限時搶答</h3>
+              <p>每題有倒數計時條，最快且正確的答題者獲得最多分數。答題結果即時顯示正確率與排行榜，競爭氣氛緊張刺激。</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-num c2-bg">03</div>
+            <div class="step-body">
+              <h3>📊 即時回饋與分析報告</h3>
+              <p>遊戲結束後提供詳細答題報告，教師可分析學生學習狀況，有效評估學習成效，並針對弱點進行教學調整。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 遊戲模式 -->
+      <div class="content-block">
+        <h2 class="block-title"><span class="block-icon">🎮</span>遊戲模式</h2>
+        <div class="modes-grid">
+          <div class="mode-card reveal border-2">
+            <div class="mode-icon">🏟️</div>
+            <h3>Classic 競技模式</h3>
+            <p>傳統多人搶答，即時排行榜讓競爭氣氛緊張刺激，適合課堂複習與知識測驗。</p>
+          </div>
+          <div class="mode-card reveal border-2">
+            <div class="mode-icon">👨‍👩‍👧‍👦</div>
+            <h3>Team Mode 團隊模式</h3>
+            <p>分組競賽，培養團隊合作精神，特別適合企業培訓與課堂分組教學活動。</p>
+          </div>
+          <div class="mode-card reveal border-2">
+            <div class="mode-icon">📝</div>
+            <h3>Assign 作業模式</h3>
+            <p>老師指派 Kahoot 作為家庭作業，學生自行完成，系統自動統計答題報告。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 玩家體驗旅程 -->
+      <div class="content-block">
+        <h2 class="block-title"><span class="block-icon">🛤️</span>玩家體驗旅程<small style="font-weight:400;color:var(--muted);margin-left:12px;font-size:.85rem;">課堂多人搶答流程</small></h2>
+        <div class="journey-steps">
+          <div class="journey-step reveal"><div class="journey-num c2-bg">01</div><h4>建立題組</h4><p>主持人選擇或自建題組，按下開始後系統產生 6 位數 Game PIN。</p></div>
+          <div class="journey-connector"></div>
+          <div class="journey-step reveal"><div class="journey-num c2-bg">02</div><h4>掃碼加入</h4><p>輸入 PIN 或掃 QR Code 進入等待大廳，不需帳號立即加入。</p></div>
+          <div class="journey-connector"></div>
+          <div class="journey-step reveal"><div class="journey-num c2-bg">03</div><h4>大螢幕出題</h4><p>題目呈現在主持人螢幕，參與者手機只顯示四色選項，簡潔清晰。</p></div>
+          <div class="journey-connector"></div>
+          <div class="journey-step reveal"><div class="journey-num c2-bg">04</div><h4>倒數搶答</h4><p>計時條由綠轉紅，答題後立即顯示對錯與全場正確率，熱烈搶答。</p></div>
+          <div class="journey-connector"></div>
+          <div class="journey-step reveal"><div class="journey-num c2-bg">05</div><h4>報告下載</h4><p>排行榜公布後可下載完整答題報告，掌握每位參與者的作答狀況。</p></div>
+        </div>
+      </div>
+
+      <!-- 適合情境 -->
+      <div class="content-block">
+        <h2 class="block-title"><span class="block-icon">📍</span>適合使用情境</h2>
+        <div class="modes-grid">
+          <div class="mode-card reveal border-2">
+            <div class="mode-icon">📚</div>
+            <h3>課堂即時互動測驗</h3>
+            <p>老師在大螢幕投影題目，學生用手機搶答，不需帳號即可加入，課堂氣氛瞬間活絡起來。</p>
+          </div>
+          <div class="mode-card reveal border-2">
+            <div class="mode-icon">📊</div>
+            <h3>課後學習成效評量</h3>
+            <p>Assign 作業模式讓老師指派題組，系統自動統整全班答題報告，快速掌握每位學生的學習狀況。</p>
+          </div>
+          <div class="mode-card reveal border-2">
+            <div class="mode-icon">🏢</div>
+            <h3>企業培訓與研習活動</h3>
+            <p>Team Mode 支援分組競賽，主持人即時掌握全場答題狀況，遊戲化形式讓培訓內容更容易吸收。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 接下來可以看... -->
+  <section class="recirculation">
+    <div class="container">
+      <h2>接下來可以看…</h2>
+      <div class="recirc-cards">
+        <a href="zhishiwang-male.html" class="recirc-card">
+          <div class="recirc-icon">🎮</div>
+          <h3>《知識王 LIVE》深度解析</h3>
+          <p>台灣本土益智競技，70 萬次下載的全面介紹</p>
+        </a>
+        <a href="compare-male.html" class="recirc-card">
+          <div class="recirc-icon">⚖️</div>
+          <h3>產品綜合比較與篩選</h3>
+          <p>七大維度對比，互動篩選器找出最適合的選擇</p>
+        </a>
+      </div>
+      <a href="index-male.html" class="btn-home">🏠 返回主頁</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>使用者介面設計與評鑑 · 第三次作業</p>
+      <p class="footer-sub">分析對象：知識王 LIVE · Kahoot!</p>
+    </div>
+  </footer>
+
+  <button id="backTop" aria-label="返回頂部">↑</button>
+  <div id="toastContainer"></div>
+  <script src="common-male.js"></script>
+<div style="position:fixed;left:12px;bottom:12px;z-index:1500;font-size:.72rem;font-weight:700;color:#fff;background:#1565d8;padding:6px 14px;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.25);">♂ 男生版（功能 / 數據導向）</div>
+</body>
+</html>

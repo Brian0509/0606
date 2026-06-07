@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="light male">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>問題諮詢 — 數位教育指南</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-male.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-home-btn" href="index-male.html">🏠 首頁</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="zhishiwang-male.html">🎮 知識王</a></li>
+        <li><a href="kahoot-male.html">🟪 Kahoot!</a></li>
+        <li><a href="compare-male.html">⚖️ 比較</a></li>
+        <li><a href="qa-male.html" class="active">💬 Q&A</a></li>
+      </ul>
+      <form class="site-search" id="siteSearchForm" role="search">
+        <input id="siteSearchInput" type="search" placeholder="搜尋本頁關鍵字…" aria-label="站內搜尋" />
+        <span class="search-count" id="siteSearchCount"></span>
+        <button type="submit" aria-label="搜尋">🔍</button>
+      </form>
+      <div class="font-ctrl">
+        <button id="fontDecrease" title="縮小字體 (Shift+−)" aria-label="縮小字體">A−</button>
+        <button id="fontReset"    title="重設字體 (Shift+0)" aria-label="重設字體">A</button>
+        <button id="fontIncrease" title="放大字體 (Shift++)" aria-label="放大字體">A+</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="選單">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="index-male.html" class="breadcrumb">← 返回主頁</a>
+      <div class="section-label">諮詢</div>
+      <h1 class="page-hero-title">💬 問題<span class="c4">諮詢</span></h1>
+      <p class="page-hero-sub">有任何關於兩款遊戲的問題？查看常見問題或直接留言給我們</p>
+    </div>
+  </section>
+
+  <!-- Q&A Section -->
+  <section class="qa-section">
+    <div class="container qa-wrap">
+
+      <!-- FAQ -->
+      <div class="faq-col reveal" style="margin-bottom:48px;">
+        <h3 class="sub-title">常見問題</h3>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">知識王 LIVE 可以在 PC 上玩嗎？<span class="faq-arrow">+</span></button>
+            <div class="faq-a">目前知識王 LIVE 沒有獨立 PC 版本，但可透過 Google Play Games（PC 版）在電腦上遊玩，使用同一 Google 帳號即可同步進度。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Kahoot! 需要帳號才能參與嗎？<span class="faq-arrow">+</span></button>
+            <div class="faq-a">不需要！參與者只需輸入主持人提供的 Game PIN 碼，即可立即加入遊戲，無需建立帳號。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">哪款遊戲比較適合課堂使用？<span class="faq-arrow">+</span></button>
+            <div class="faq-a">Kahoot! 更適合課堂使用。老師在大螢幕投影題目，學生用手機搶答，不需帳號即可加入，且提供完整的學習分析報告，讓老師即時掌握學生狀況。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">知識王 LIVE 和 Kahoot! 都免費嗎？<span class="faq-arrow">+</span></button>
+            <div class="faq-a">兩款都有免費版本。知識王 LIVE 免費遊玩但有內建微課金選項；Kahoot! 有免費基本方案，進階功能（詳細分析、品牌設定）需訂閱 Premium 方案。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 聯絡表單 -->
+      <div class="contact-col reveal">
+        <h3 class="sub-title">提問表單</h3>
+        <form id="contactForm" novalidate>
+          <div class="field-group">
+            <label for="fname">姓名 <span class="req">*</span></label>
+            <input type="text" id="fname" placeholder="請輸入姓名" />
+            <span class="field-err" id="fnameErr"></span>
+          </div>
+          <div class="field-group">
+            <label for="femail">Email <span class="req">*</span></label>
+            <input type="email" id="femail" placeholder="example@email.com" />
+            <span class="field-err" id="femailErr"></span>
+          </div>
+          <div class="field-group">
+            <label for="fmsg">您的問題或建議</label>
+            <textarea id="fmsg" rows="4" placeholder="請輸入內容…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">送出 →</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>使用者介面設計與評鑑 · 第三次作業</p>
+      <p class="footer-sub">分析對象：知識王 LIVE · Kahoot!</p>
+    </div>
+  </footer>
+
+  <!-- 返回頂部 -->
+  <button id="backTop" aria-label="返回頂部">↑</button>
+
+  <!-- 確認送出 Modal -->
+  <div id="confirmOverlay" class="confirm-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="confirm-modal">
+      <h3>確認送出？</h3>
+      <p id="confirmSummary">請確認您的資料後再送出。</p>
+      <div class="confirm-btns">
+        <button class="confirm-btn-yes" id="confirmYes">確認送出</button>
+        <button class="confirm-btn-no"  id="confirmNo">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer"></div>
+  <script src="common-male.js"></script>
+  <script>
+    'use strict';
+
+    const nameInput  = document.getElementById('fname');
+    const emailInput = document.getElementById('femail');
+    const msgInput   = document.getElementById('fmsg');
+    const nameErr    = document.getElementById('fnameErr');
+    const emailErr   = document.getElementById('femailErr');
+    const form       = document.getElementById('contactForm');
+
+    const saved = localStorage.getItem('contactName');
+    if (saved) nameInput.value = saved;
+
+    function validateEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+    function showErr(input, errEl, msg) { input.classList.add('err'); errEl.textContent = '⚠ ' + msg; }
+    function clearErr(input, errEl) { input.classList.remove('err'); errEl.textContent = ''; }
+
+    nameInput.addEventListener('input',  () => { if (nameInput.value.trim()) clearErr(nameInput, nameErr); });
+    emailInput.addEventListener('input', () => {
+      if (!emailInput.value.trim() || validateEmail(emailInput.value.trim())) clearErr(emailInput, emailErr);
+    });
+
+    const overlay    = document.getElementById('confirmOverlay');
+    const confirmYes = document.getElementById('confirmYes');
+    const confirmNo  = document.getElementById('confirmNo');
+    const summary    = document.getElementById('confirmSummary');
+
+    function openConfirm(name, email) {
+      summary.textContent = `姓名：${name}　Email：${email}`;
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+    function closeConfirm() {
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    confirmNo.addEventListener('click', closeConfirm);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeConfirm(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeConfirm(); });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let valid = true;
+
+      if (!nameInput.value.trim()) { showErr(nameInput, nameErr, '請填寫姓名'); valid = false; }
+      else clearErr(nameInput, nameErr);
+
+      const emailVal = emailInput.value.trim();
+      if (!emailVal) { showErr(emailInput, emailErr, '請填寫 Email'); valid = false; }
+      else if (!validateEmail(emailVal)) { showErr(emailInput, emailErr, '請確認 Email 格式（例：abc@gmail.com）'); valid = false; }
+      else clearErr(emailInput, emailErr);
+
+      if (valid) openConfirm(nameInput.value.trim(), emailVal);
+    });
+
+    confirmYes.addEventListener('click', () => {
+      localStorage.setItem('contactName', nameInput.value.trim());
+      localStorage.setItem('lastForm', JSON.stringify({
+        name:  nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        msg:   msgInput.value.trim(),
+        time:  new Date().toISOString()
+      }));
+      closeConfirm();
+      showToast('✅ 送出成功！感謝您的意見回饋。');
+      form.reset();
+      nameInput.value = localStorage.getItem('contactName') || '';
+    });
+  </script>
+<div style="position:fixed;left:12px;bottom:12px;z-index:1500;font-size:.72rem;font-weight:700;color:#fff;background:#1565d8;padding:6px 14px;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.25);">♂ 男生版（功能 / 數據導向）</div>
+</body>
+</html>
